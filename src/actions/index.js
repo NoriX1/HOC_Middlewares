@@ -10,7 +10,7 @@ export const saveComment = (comment) => {
 
 export const fetchComments = () => async dispatch => {
     const response = await axios.get('https://jsonplaceholder.typicode.com/comments?_limit=10');
-    dispatch({ type: FETCH_COMMENTS, payload: response.data });
+    dispatch({ type: FETCH_COMMENTS, payload: response.data.map(comment => comment.body) });
 }
 
 export const changeAuth = (isLoggedIn) => {
