@@ -12,8 +12,10 @@ class CommentBox extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.saveComment(this.state.comment);
-        this.setState({ comment: '' });
+        if (this.state.comment != '') {
+            this.props.saveComment(this.state.comment);
+            this.setState({ comment: '' });
+        }
     }
 
     render() {
