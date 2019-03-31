@@ -6,7 +6,8 @@ export default (state = [], action) => {
             return [...state, action.payload];
         }
         case FETCH_COMMENTS: {
-            return action.payload;
+            const comments = action.payload.data.map(comment => comment.body);
+            return [...state, ...comments];
         }
         default:
             return state;
