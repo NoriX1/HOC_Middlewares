@@ -8,9 +8,16 @@ export const saveComment = (comment) => {
     };
 };
 
+<<<<<<< HEAD
 export const fetchComments = () => async dispatch => {
     const response = await axios.get('https://jsonplaceholder.typicode.com/comments?_limit=10');
     dispatch({ type: FETCH_COMMENTS, payload: response });
+=======
+export const fetchComments = () => {
+    const response = axios.get('https://jsonplaceholder.typicode.com/comments?_limit=10');
+    return { type: FETCH_COMMENTS, payload: response };
+
+>>>>>>> Middlewares
 }
 
 export const changeAuth = (isLoggedIn) => {
